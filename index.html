@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heaven Cut - Barbershop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=2" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">Heaven <span>Cut</span></a>
+    <button
+      class="hamburger"
+      id="hamburger"
+      type="button"
+      aria-label="Buka menu"
+      aria-expanded="false"
+      aria-controls="menu-utama"
+    >
+      <span class="garis"></span>
+      <span class="garis"></span>
+      <span class="garis"></span>
+    </button>
+    <ul class="menu" id="menu-utama">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="layanan/layanan.html">Layanan</a></li>
+      <li><a href="#barber">Barber</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#antrian">ANTRIAN</a></li>
+      <li><a href="auth/login.html" id="link-masuk">Masuk</a></li>
+      <li><a href="booking/booking.html" class="tombol-booking">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-isi">
+      <p class="label">Barbershop Sejak 2026</p>
+      <h1>Your Style<br /><span>Our Signature.</span></h1>
+      <p>Potongan rapi, cukur klasik, dan perawatan jenggot oleh barber berpengalaman.</p>
+      <a href="booking/booking.html" class="btn">Booking Sekarang</a>
+      <a href="layanan/layanan.html" class="btn btn-garis">Lihat Layanan</a>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="section">
+    <div class="container dua-kolom">
+      <div>
+        <p class="label">Tentang Kami</p>
+        <h2 class="judul">Lebih dari Sekadar Potong Rambut</h2>
+        <br />
+        <p>Heaven Cut adalah tempat para pria merawat diri. Kami memadukan teknik barbershop klasik dengan gaya modern di ruangan yang nyaman.</p>
+        <p>Setiap pelanggan dilayani tanpa terburu-buru, mulai dari konsultasi gaya sampai finishing dengan handuk hangat.</p>
+        <br />
+        <a href="booking/booking.html" class="btn">Pesan Kursi</a>
+      </div>
+      <div>
+        <img src="assets/images/potong jenggot.avif" alt="Barber sedang memotong rambut" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section id="layanan" class="section gelap">
+    <div class="container">
+      <div class="tengah">
+        <p class="label">Layanan Kami</p>
+        <h2 class="judul">Pilih Gayamu</h2>
+      </div>
+      <div class="grid-3">
+        <div class="kartu">
+          <div class="ikon">✂️</div>
+          <h3>Potong Rambut</h3>
+          <p>Konsultasi gaya, potong, dan styling.</p>
+          <span class="harga">Rp 20.000</span><span class="durasi">45 menit</span>
+        </div>
+        <div class="kartu">
+          <div class="ikon">🪒</div>
+          <h3>Cukur Jenggot</h3>
+          <p>Cukur klasik dengan handuk hangat.</p>
+          <span class="harga">Rp 15.000</span><span class="durasi">30 menit</span>
+        </div>
+        <div class="kartu">
+          <div class="ikon">👑</div>
+          <h3>Paket Komplit</h3>
+          <p>Potong, cukur, cuci, dan pijat kepala.</p>
+          <span class="harga">Rp 100.000</span><span class="durasi">90 menit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARBER -->
+  <section id="barber" class="section">
+    <div class="container">
+      <div class="tengah">
+        <p class="label">Tim Kami</p>
+        <h2 class="judul">Barber Profesional</h2>
+      </div>
+      <div class="grid-3">
+        <div class="barber">
+          <img src="assets/images/Mupet.jpeg" alt="Barber Mupet" />
+          <h3>Mupet</h3>
+          <p>Master Barber</p>
+        </div>
+        <div class="barber">
+          <img src="assets/images/Wibi.jpeg" alt="Barber Wibi" />
+          <h3>Wibi</h3>
+          <p>Spesialis Fade</p>
+        </div>
+        <div class="barber">
+          <img src="assets/images/Pito.jpeg" alt="Barber Pito" />
+          <h3>Pito</h3>
+          <p>Spesialis Mullet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTRIAN -->
+  <section id="antrian" class="section gelap">
+    <div class="container">
+
+      <div class="tengah">
+        <p class="label">LIVE QUEUE</p>
+        <h2 class="judul">Antrian Saat Ini</h2>
+        <p style="color:#999;">
+          Lihat jumlah pelanggan yang sedang menunggu giliran.
+        </p>
+      </div>
+
+      <!-- TOTAL ANTRIAN -->
+      <div class="antrian-total">
+        <p>TOTAL ANTRIAN</p>
+        <h2 id="totalAntrian">0</h2>
+        <span>Pelanggan sedang menunggu</span>
+      </div>
+
+      <!-- ANTRIAN PER BARBER -->
+      <!-- id "antrian-mupet", "antrian-wibi", "antrian-pito" dibaca oleh script.js -->
+      <div class="grid-3">
+
+        <div class="antrian-card">
+          <h3>MUPET</h3>
+          <p>MASTER BARBER</p>
+          <div class="jumlah-antrian" id="antrian-mupet">0</div>
+          <span>Orang dalam antrian</span>
+        </div>
+
+        <div class="antrian-card">
+          <h3>WIBI</h3>
+          <p>SPESIALIS FADE</p>
+          <div class="jumlah-antrian" id="antrian-wibi">0</div>
+          <span>Orang dalam antrian</span>
+        </div>
+
+        <div class="antrian-card">
+          <h3>PITO</h3>
+          <p>SPESIALIS MULLET</p>
+          <div class="jumlah-antrian" id="antrian-pito">0</div>
+          <span>Orang dalam antrian</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="section gelap">
+    <div class="container">
+      <div class="tengah">
+        <p class="label">Galeri</p>
+        <h2 class="judul">Hasil Karya</h2>
+      </div>
+      <div class="galeri">
+        <img class="lebar" src="assets/images/interior.avif" alt="Interior barbershop" />
+        <img src="assets/images/alat.avif" alt="Potongan fade" />
+        <img src="assets/images/motong galeri.avif" alt="Perawatan jenggot" />
+        <img src="assets/images/lagi motong galeri.avif" alt="Cukur klasik" />
+        <img src="assets/images/lagi motong 2 galeri.avif" alt="Barber bekerja" />
+        <img class="lebar" src="assets/images/interior 3.jpg" alt="Suasana barbershop" />
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="section">
+    <div class="container">
+      <div class="tengah">
+        <p class="label">Hubungi Kami</p>
+        <h2 class="judul">Lokasi dan Jam Buka</h2>
+      </div>
+      <div class="dua-kolom">
+        <div class="kontak-info">
+          <p><strong>Alamat</strong>Jl. Paron No. 1, Ngawi, Jawa Timur</p>
+          <p><strong>Telepon / WhatsApp</strong>+62 85807235263</p>
+          <p><strong>Jam Buka</strong>Senin - Sabtu: 09.00 - 21.00<br />Minggu: 10.00 - 20.00</p>
+        </div>
+        <form class="form" id="form-kontak">
+          <input type="text" id="kontak-nama" placeholder="Nama Anda" required />
+          <input type="tel" id="kontak-telepon" placeholder="Nomor Telepon" />
+          <textarea id="kontak-pesan" rows="4" placeholder="Pesan Anda..." required></textarea>
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>HEAVEN CUT</h3>
+    <p>&copy; <span id="tahun"></span> Heaven Cut Barbershop. Hak cipta dilindungi.</p>
+  </footer>
+
+  <script src="assets/js/script.js?v=2"></script>
+  <script src="assets/js/kontak.js"></script>
+  <script src="assets/js/jam.js"></script>
+</body>
+</html>

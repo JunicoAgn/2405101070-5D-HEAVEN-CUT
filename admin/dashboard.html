@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin - Kings Cut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- cek login dulu, kalau belum login langsung dipindah -->
+  <script src="../assets/js/admin.js"></script>
+  <script>cekAdmin();</script>
+
+  <!-- NAVBAR ADMIN -->
+  <nav class="scrolled">
+    <span class="logo">HEAVEN <span>CUT</span> - ADMIN</span>
+    <button class="btn btn-garis" onclick="logoutAdmin()">Keluar</button>
+  </nav>
+
+  <div class="header-halaman">
+    <p class="label">Panel Admin</p>
+    <h1 class="judul">Data Pengunjung</h1>
+    <p>Lihat reservasi, pesan, dan akun yang masuk dari website.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- statistik -->
+      <div class="statistik">
+        <div class="kotak-stat"><strong id="jml-booking">0</strong><span>Reservasi</span></div>
+        <div class="kotak-stat"><strong id="jml-pesan">0</strong><span>Pesan Masuk</span></div>
+        <div class="kotak-stat"><strong id="jml-user">0</strong><span>Akun Terdaftar</span></div>
+      </div>
+
+      <!-- tombol tab -->
+      <div class="tab">
+        <button class="tombol-tab aktif" id="btn-booking" onclick="bukaTab('booking')">Reservasi</button>
+        <button class="tombol-tab" id="btn-pesan" onclick="bukaTab('pesan')">Pesan Masuk</button>
+        <button class="tombol-tab" id="btn-user" onclick="bukaTab('user')">Akun Pengguna</button>
+      </div>
+
+      <!-- isi tab -->
+      <div class="isi-tab" id="tab-booking">
+        <div id="tabel-booking"></div>
+      </div>
+
+      <div class="isi-tab" id="tab-pesan" style="display:none">
+        <div id="tabel-pesan"></div>
+      </div>
+
+      <div class="isi-tab" id="tab-user" style="display:none">
+        <div id="tabel-user"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <h3>HEAVEN CUT</h3>
+    <p>Panel admin (demo)</p>
+  </footer>
+
+  <script>tampilSemua();</script>
+</body>
+</html>
+
+<script src="assets/js/jam.js"></script>
+</body>
+</html>

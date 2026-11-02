@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar - Heaven Cut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=2" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="../index.html" class="logo">HEAVEN <span>CUT</span></a>
+    <button
+      class="hamburger"
+      id="hamburger"
+      type="button"
+      aria-label="Buka menu"
+      aria-expanded="false"
+      aria-controls="menu-utama"
+    >
+      <span class="garis"></span>
+      <span class="garis"></span>
+      <span class="garis"></span>
+    </button>
+    <ul class="menu" id="menu-utama">
+      <li><a href="../index.html#tentang">Tentang</a></li>
+      <li><a href="../layanan/layanan.html">Layanan</a></li>
+      <li><a href="../index.html#barber">Barber</a></li>
+      <li><a href="../index.html#galeri">Galeri</a></li>
+      <li><a href="../index.html#kontak">Kontak</a></li>
+      <li><a href="../auth/login.html" id="link-masuk">Masuk</a></li>
+      <li><a href="../booking/booking.html" class="tombol-booking">Booking</a></li>
+    </ul>
+  </nav>
+
+  <section class="halaman-auth">
+    <div class="kotak-auth">
+      <h1>Buat Akun</h1>
+      <p class="sub">Daftar supaya booking lebih cepat.</p>
+      <p id="pesan" class="pesan"></p>
+
+      <form class="form" onsubmit="prosesDaftar(event)">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required />
+        <input type="email" id="email" placeholder="Alamat Email" required />
+        <input type="password" id="sandi" placeholder="Kata Sandi (min. 6 karakter)" required />
+        <input type="password" id="ulangi" placeholder="Ulangi Kata Sandi" required />
+        <button type="submit" class="btn">Daftar</button>
+      </form>
+
+      <p class="ganti">Sudah punya akun? <a href="login.html">Masuk</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <h3>HEAVEN CUT</h3>
+    <p>&copy; <span id="tahun"></span> Heaven Cut Barbershop. Hak cipta dilindungi.</p>
+  </footer>
+
+  <script src="../assets/js/script.js?v=2"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>
+
+<script src="assets/js/jam.js"></script>
+</body>
+</html>

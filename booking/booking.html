@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking - Heaven Cut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=2" />
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="../index.html" class="logo">HEAVEN <span>CUT</span></a>
+    <button
+      class="hamburger"
+      id="hamburger"
+      type="button"
+      aria-label="Buka menu"
+      aria-expanded="false"
+      aria-controls="menu-utama"
+    >
+      <span class="garis"></span>
+      <span class="garis"></span>
+      <span class="garis"></span>
+    </button>
+    <ul class="menu" id="menu-utama">
+      <li><a href="../index.html#tentang">Tentang</a></li>
+      <li><a href="../layanan/layanan.html">Layanan</a></li>
+      <li><a href="../index.html#barber">Barber</a></li>
+      <li><a href="../index.html#galeri">Galeri</a></li>
+      <li><a href="../index.html#kontak">Kontak</a></li>
+      <li><a href="../auth/login.html" id="link-masuk">Masuk</a></li>
+      <li><a href="../booking/booking.html" class="tombol-booking">Booking</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-halaman">
+    <p class="label">Reservasi</p>
+    <h1 class="judul">Booking Kursi</h1>
+    <p>Pilih layanan, barber, dan jam yang cocok untuk Anda.</p>
+  </div>
+
+  <section class="section">
+    <div class="container grid-2">
+
+      <!-- form -->
+      <div class="panel">
+        <h2>Form Booking</h2>
+        <p id="pesan" class="pesan"></p>
+
+        <form class="form" id="form-booking">
+          <input type="text" id="nama" placeholder="Nama Anda" required />
+          <input type="tel" id="telepon" placeholder="Nomor WhatsApp" required />
+
+          <label for="layanan">Layanan</label>
+          <select id="layanan" required>
+            <option value="Potong Rambut">Potong Rambut - Rp 50.000</option>
+            <option value="Cukur Jenggot">Cukur Jenggot - Rp 30.000</option>
+            <option value="Cuci dan Styling">Cuci dan Styling - Rp 35.000</option>
+            <option value="Paket Komplit">Paket Komplit - Rp 100.000</option>
+            <option value="Pewarnaan Rambut">Pewarnaan Rambut - Rp 150.000</option>
+            <option value="Potong Anak">Potong Anak - Rp 40.000</option>
+          </select>
+
+          <label for="barber">Barber</label>
+          <select id="barber" required>
+            <option value="Rangga">Rangga</option>
+            <option value="Dimas">Dimas</option>
+            <option value="Bayu">Bayu</option>
+          </select>
+
+          <div class="baris">
+            <div>
+              <label for="tanggal">Tanggal</label>
+              <input type="date" id="tanggal" required />
+            </div>
+            <div>
+              <label for="jam">Jam</label>
+              <select id="jam" required></select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Pesan Sekarang</button>
+        </form>
+      </div>
+
+      <!-- daftar -->
+      <div class="panel">
+        <h2>Reservasi Anda</h2>
+        <div id="daftar-booking"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <h3>HEAVEN CUT</h3>
+    <p>&copy; <span id="tahun"></span> Heaven Cut Barbershop. Hak cipta dilindungi.</p>
+  </footer>
+
+  <script src="../assets/js/script.js?v=2"></script>
+  <script src="../assets/js/booking.js"></script>
+</body>
+</html>
+
+<script src="assets/js/jam.js"></script>
+</body>
+</html>

@@ -1,0 +1,1136 @@
+/* ===== Heaven Cut Barbershop - style.css (versi responsif) ===== */
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0f10;
+  color: #e9e5dc;
+  line-height: 1.6;
+  overflow-x: hidden; /* cegah geser ke samping di HP */
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== container & section ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: clamp(50px, 8vw, 80px) 0;
+}
+
+.gelap {
+  background-color: #1a1a1c;
+}
+
+.tengah {
+  text-align: center;
+  margin-bottom: clamp(25px, 5vw, 40px);
+}
+
+.label {
+  color: #c8913b;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.judul {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+}
+
+/* ===== tombol ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #c8913b;
+  color: #0f0f10;
+  border: 2px solid #c8913b;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #c8913b;
+}
+
+.btn-garis {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-garis:hover {
+  border-color: #c8913b;
+  color: #c8913b;
+}
+
+/* ===== navbar ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 15px clamp(15px, 3vw, 30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav.scrolled {
+  background-color: #0f0f10;
+  border-bottom: 1px solid #c8913b;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 4vw, 28px);
+  letter-spacing: 2px;
+  color: white;
+}
+
+.logo span {
+  color: #c8913b;
+}
+
+.menu {
+  display: flex;
+  gap: 5px;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ddd;
+}
+
+.menu a:hover {
+  color: #c8913b;
+}
+
+.menu .tombol-booking {
+  border: 1px solid #c8913b;
+  color: #c8913b;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* tiga garis hamburger (nanti berubah jadi tanda X) */
+.hamburger .garis {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  margin: -1px 0 0 -11px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.hamburger .garis:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.hamburger .garis:nth-child(3) {
+  transform: translateY(7px);
+}
+
+/* kondisi terbuka: garis atas & bawah menyilang, tengah menghilang */
+nav.buka .hamburger .garis:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+nav.buka .hamburger .garis:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+nav.buka .hamburger .garis:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* lapisan gelap di belakang menu (dibuat otomatis oleh script.js) */
+.menu-overlay {
+  display: none;
+}
+
+/* ===== hero ===== */
+#hero {
+  height: 100vh;
+  height: 100svh; /* tinggi layar HP yang akurat (tanpa address bar) */
+  min-height: 480px;
+  background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1c;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-isi {
+  position: relative;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-isi h1 {
+  font-size: clamp(52px, 13vw, 90px);
+  line-height: 1;
+  margin: 15px 0;
+}
+
+.hero-isi h1 span {
+  color: #c8913b;
+}
+
+.hero-isi p {
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+/* ===== tentang ===== */
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(25px, 5vw, 50px);
+  align-items: center;
+}
+
+.dua-kolom p {
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.dua-kolom img {
+  height: clamp(250px, 40vw, 400px);
+  border: 3px solid #c8913b;
+}
+
+/* ===== kartu layanan ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kartu {
+  background-color: #242427;
+  padding: 30px 25px;
+  border-top: 3px solid #c8913b;
+}
+
+.kartu .ikon {
+  font-size: 32px;
+}
+
+.kartu h3 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+
+.kartu p {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.kartu .harga {
+  color: #c8913b;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+}
+
+.kartu .durasi {
+  color: #888;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.kartu:hover {
+  background-color: #2e2e32;
+}
+
+/* ===== barber ===== */
+.barber {
+  text-align: center;
+}
+
+.barber img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.barber h3 {
+  font-size: 26px;
+  margin-top: 12px;
+}
+
+.barber p {
+  color: #c8913b;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* ===== galeri ===== */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.galeri img {
+  height: clamp(130px, 20vw, 200px);
+}
+
+.galeri .lebar {
+  grid-column: span 2;
+}
+
+/* ===== kontak ===== */
+.kontak-info p {
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.kontak-info strong {
+  display: block;
+  color: #c8913b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== form ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form label {
+  color: #c8913b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 14px;
+  background-color: #1f1f22;
+  border: 1px solid #5a4727;
+  color: white;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #c8913b;
+}
+
+.form button {
+  width: 100%;
+}
+
+/* ===== header halaman dalam ===== */
+.header-halaman {
+  background-color: #1a1a1c;
+  text-align: center;
+  padding: clamp(100px, 16vw, 140px) 20px 50px;
+  border-bottom: 1px solid #c8913b;
+}
+
+.header-halaman p {
+  color: #999;
+  margin-top: 10px;
+}
+
+/* ===== login & daftar ===== */
+.halaman-auth {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 20px 40px;
+}
+
+.kotak-auth {
+  width: 100%;
+  max-width: 400px;
+  background-color: #1a1a1c;
+  border-top: 3px solid #c8913b;
+  padding: 35px 30px;
+}
+
+.kotak-auth h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.kotak-auth .sub {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin: 5px 0 20px;
+}
+
+.kotak-auth .ganti {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-top: 20px;
+}
+
+.kotak-auth .ganti a {
+  color: #c8913b;
+}
+
+.pesan {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+  min-height: 20px;
+}
+
+.pesan.error {
+  color: #f08a84;
+}
+
+.pesan.sukses {
+  color: #8fd18f;
+}
+
+/* ===== booking ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.panel {
+  background-color: #1a1a1c;
+  border-top: 3px solid #c8913b;
+  padding: 30px;
+}
+
+.panel h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.baris {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.item-booking {
+  background-color: #0f0f10;
+  border-left: 3px solid #c8913b;
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item-booking small {
+  display: block;
+  color: #888;
+}
+
+.btn-batal {
+  background: none;
+  border: 1px solid #b3261e;
+  color: #f08a84;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn-batal:hover {
+  background-color: #b3261e;
+  color: white;
+}
+
+/* ===== footer ===== */
+footer {
+  background-color: #070708;
+  text-align: center;
+  padding: 30px 20px;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #c8913b;
+}
+
+footer h3 {
+  font-size: 26px;
+}
+
+/* ===== halaman admin ===== */
+.statistik {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kotak-stat {
+  background-color: #1a1a1c;
+  border-top: 3px solid #c8913b;
+  padding: 20px;
+  text-align: center;
+}
+
+.kotak-stat strong {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  color: #c8913b;
+  line-height: 1;
+}
+
+.kotak-stat span {
+  color: #999;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tab {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tombol-tab {
+  background-color: #1a1a1c;
+  color: #ccc;
+  border: 1px solid #5a4727;
+  padding: 12px 22px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.tombol-tab.aktif {
+  background-color: #c8913b;
+  color: #0f0f10;
+  border-color: #c8913b;
+}
+
+.isi-tab {
+  background-color: #1a1a1c;
+  padding: 20px;
+  overflow-x: auto; /* tabel bisa digeser di HP */
+  -webkit-overflow-scrolling: touch;
+  color: #999;
+}
+
+.tabel {
+  width: 100%;
+  min-width: 560px; /* supaya kolom tidak gepeng, geser di HP */
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #e9e5dc;
+}
+
+.tabel th {
+  text-align: left;
+  color: #c8913b;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px;
+  border-bottom: 2px solid #c8913b;
+  white-space: nowrap;
+}
+
+.tabel td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  vertical-align: top;
+}
+
+/* ===== efek gelembung saat kartu dipencet ===== */
+.kartu {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s;
+}
+
+.kartu:active {
+  transform: scale(0.94);
+}
+
+.kartu.pop {
+  animation: pop 0.5s;
+}
+
+@keyframes pop {
+  0%   { transform: scale(0.94); }
+  40%  { transform: scale(1.06); }
+  70%  { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  background-color: rgba(200, 145, 59, 0.3);
+  border: 2px solid rgba(224, 176, 104, 0.8);
+  pointer-events: none;
+  animation: gelembung 0.7s ease-out forwards;
+}
+
+@keyframes gelembung {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+.bubble-kecil {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(224, 176, 104, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  animation: naik 0.9s ease-out forwards;
+}
+
+@keyframes naik {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kartu.pop,
+  .bubble,
+  .bubble-kecil {
+    animation: none;
+  }
+}
+
+/* ===== ANTRIAN BARBER ===== */
+.antrian-total {
+  max-width: 400px;
+  margin: 0 auto 35px;
+  padding: 30px;
+  text-align: center;
+  background: #242427;
+  border: 1px solid #c8913b;
+}
+
+.antrian-total p {
+  color: #c8913b;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.antrian-total h2 {
+  font-size: clamp(48px, 12vw, 65px);
+  color: #c8913b;
+  margin: 10px 0;
+}
+
+.antrian-total span {
+  color: #999;
+  font-size: 13px;
+}
+
+.antrian-card {
+  background: #242427;
+  border-top: 3px solid #c8913b;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.antrian-card h3 {
+  font-size: 28px;
+}
+
+.antrian-card p {
+  color: #c8913b;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.jumlah-antrian {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 10vw, 55px);
+  color: #c8913b;
+}
+
+.antrian-card span {
+  font-size: 13px;
+  color: #999;
+}
+
+/* efek hover hanya untuk perangkat yang punya mouse (bukan layar sentuh) */
+@media (hover: hover) {
+  .antrian-card:hover {
+    background: #303034;
+    transform: translateY(-5px);
+  }
+}
+
+.admin-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.admin-link a {
+  color: #b99a62;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.admin-link a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   Taruh paling bawah supaya bisa menimpa aturan di atas.
+   Urutan: dari layar besar ke kecil.
+   ========================================================= */
+
+/* ----- Laptop kecil / tablet landscape (<= 1024px) ----- */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .galeri {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .galeri .lebar {
+    grid-column: span 1;
+  }
+}
+
+/* ----- Menu hamburger (<= 1600px) -----
+   Batas ini sengaja lebih lebar dari tablet supaya hamburger
+   juga muncul di layar laptop tanpa perlu zoom. */
+@media (max-width: 1600px) {
+  nav {
+    flex-wrap: wrap;
+    transition: background-color 0.35s ease;
+  }
+
+  nav.buka {
+    background-color: #0f0f10;
+  }
+
+  /* ----- tombol hamburger ----- */
+  .hamburger {
+    display: block;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.15s ease;
+  }
+
+  .hamburger:active {
+    transform: scale(0.92);
+  }
+
+  .hamburger:focus-visible {
+    outline: 2px solid #c8913b;
+    outline-offset: 3px;
+  }
+
+  nav.buka .hamburger {
+    background-color: #c8913b;
+    border-color: #c8913b;
+    color: #0f0f10;
+  }
+
+  /* ----- panel menu: turun seperti tirai ----- */
+  .menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    background-color: #0f0f10;
+    border-bottom: 1px solid #c8913b;
+    padding: 10px 20px 20px;
+    max-height: calc(100vh - 70px);
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    /* kondisi tertutup: terlipat ke atas */
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.3s ease,
+      visibility 0s linear 0.45s;
+  }
+
+  /* kondisi terbuka */
+  nav.buka .menu {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.3s ease,
+      visibility 0s;
+  }
+
+  /* ----- item menu muncul satu per satu ----- */
+  .menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  nav.buka .menu li {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.4s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  nav.buka .menu li:nth-child(1) { transition-delay: 0.08s; }
+  nav.buka .menu li:nth-child(2) { transition-delay: 0.13s; }
+  nav.buka .menu li:nth-child(3) { transition-delay: 0.18s; }
+  nav.buka .menu li:nth-child(4) { transition-delay: 0.23s; }
+  nav.buka .menu li:nth-child(5) { transition-delay: 0.28s; }
+  nav.buka .menu li:nth-child(6) { transition-delay: 0.33s; }
+  nav.buka .menu li:nth-child(7) { transition-delay: 0.38s; }
+  nav.buka .menu li:nth-child(8) { transition-delay: 0.43s; }
+
+  .menu a {
+    padding: 14px 10px;
+    border-bottom: 1px solid #222;
+    transition: color 0.2s ease, padding-left 0.25s ease;
+  }
+
+  .menu a:active {
+    color: #c8913b;
+    padding-left: 18px;
+  }
+
+  .menu .tombol-booking {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* ----- lapisan gelap di belakang menu ----- */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.35s ease,
+      visibility 0s linear 0.35s;
+  }
+
+  .menu-overlay.tampil {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.35s ease,
+      visibility 0s;
+  }
+
+  /* halaman di belakang tidak ikut ter-scroll saat menu terbuka */
+  body.menu-terbuka {
+    overflow: hidden;
+  }
+
+  /* perangkat yang diatur "kurangi animasi":
+     gerakan geser dihilangkan, tapi fade halus tetap ada
+     supaya efek buka/tutup menu masih terlihat */
+  @media (prefers-reduced-motion: reduce) {
+    .menu {
+      clip-path: none;
+      transition:
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+    }
+
+    nav.buka .menu {
+      transition:
+        opacity 0.3s ease,
+        visibility 0s;
+    }
+
+    .menu li,
+    nav.buka .menu li,
+    nav.buka .menu li:nth-child(n) {
+      transform: none;
+      transition: opacity 0.3s ease;
+      transition-delay: 0s;
+    }
+  }
+}
+
+/* ----- Tablet (<= 900px): tata letak jadi 1-2 kolom ----- */
+@media (max-width: 900px) {
+
+  .dua-kolom,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* kartu: 2 kolom di tablet */
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statistik {
+    gap: 12px;
+  }
+
+  .kotak-stat strong {
+    font-size: 38px;
+  }
+
+  .kotak-stat span {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ----- HP (<= 600px) ----- */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid-3,
+  .baris,
+  .statistik {
+    grid-template-columns: 1fr;
+  }
+
+  .galeri {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .galeri .lebar {
+    grid-column: span 2;
+  }
+
+  .hero-isi h1 {
+    margin: 10px 0;
+  }
+
+  /* tombol hero tampil bertumpuk & selebar layar */
+  .hero-isi .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+  }
+
+  .panel {
+    padding: 22px 18px;
+  }
+
+  .panel h2 {
+    font-size: 28px;
+  }
+
+  .kotak-auth {
+    padding: 28px 20px;
+  }
+
+  .kotak-auth h1 {
+    font-size: 34px;
+  }
+
+  .halaman-auth {
+    padding: 90px 16px 30px;
+  }
+
+  .antrian-total,
+  .antrian-card {
+    padding: 22px 18px;
+  }
+
+  /* 16px mencegah iPhone zoom otomatis saat input diketuk */
+  .form input,
+  .form select,
+  .form textarea {
+    font-size: 16px;
+  }
+
+  /* tab admin: tombol dibagi rata */
+  .tombol-tab {
+    flex: 1 1 auto;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .isi-tab {
+    padding: 14px;
+  }
+
+  .item-booking {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-batal {
+    width: 100%;
+  }
+
+  footer {
+    padding: 25px 16px;
+  }
+}
+
+/* ----- HP kecil (<= 400px) ----- */
+@media (max-width: 400px) {
+  .label {
+    letter-spacing: 2px;
+  }
+
+  .galeri {
+    grid-template-columns: 1fr;
+  }
+
+  .galeri .lebar {
+    grid-column: span 1;
+  }
+
+  .kartu {
+    padding: 24px 18px;
+  }
+
+  .kartu .durasi {
+    display: block;
+    margin-left: 0;
+  }
+}
