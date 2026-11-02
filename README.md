@@ -2,12 +2,12 @@
 
 ## Identitas Mahasiswa
 
-- Nama: [Junico Agnesia Perdana Kusuma]
-- NIM: [240101070]
-- Kelas: [5D]
-- Program Studi: [Teknik Informatika]
+- Nama: Junico Agnesia Perdana Kusuma
+- NIM: 240101070
+- Kelas: 5D
+- Program Studi: Teknik Informatika
 - Mata Kuliah: Pemrograman Web Dasar
-- Tahun Akademik: [2026]
+- Tahun Akademik: 2026
 
 ## Deskripsi
 
